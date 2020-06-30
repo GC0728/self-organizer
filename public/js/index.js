@@ -1,14 +1,45 @@
-// Global Variables
+/* Global Variables */
 
 const leftbar = $(".b");
 
 
-// Navbar Button DOM Manipulation
+/* Navbar Button DOM Manipulation */
 
-function displayLeftbarNav() {
-    leftbar.append("<a> Climbing </a>")
+//
+function displayCarear() {
+    leftbar.empty();
+    leftbar.append("<a> Programming </a>");
 };
 
-// DOM Events
+function displayLifestyle() {
+    leftbar.empty();
+    leftbar.append("<a> Firearms </a>");
+};
 
-$("button").on("click", displayLeftbarNav);
+function displayFitness() {
+    leftbar.empty();
+    leftbar.append("<a> Climbing </a>");
+};
+
+// Switch statement for button actions
+function evaluateBtn() {
+    let clickedBtn = $(event.target).attr("name");
+    
+    switch(clickedBtn) {
+        case "carear":
+            displayCarear();
+            break;
+        case "lifestyle":
+            displayLifestyle();
+            break;
+        case "fitness":
+            displayFitness();
+            break;
+    };
+};
+
+
+
+/* DOM Events */
+
+$("button").on("click", evaluateBtn);

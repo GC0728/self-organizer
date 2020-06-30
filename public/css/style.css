@@ -12,7 +12,7 @@ body {
 }
 
 .box {
-    background-color: #444;
+    background-color: #B7D4EF;
     border-style: solid;
 
 }
@@ -41,7 +41,7 @@ body {
 
 .navlink {
     box-sizing: border-box;
-    background-color: #444;
+    background: none;
     border: none;
     font-size: 22px;
     margin: 0px 10px;
