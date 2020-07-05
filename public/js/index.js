@@ -13,46 +13,38 @@ const lifestyleTopics = ["Car Maintenance", "Cooking", "Firearms"];
 // Navlink button actions
 function displayCarear() {
     leftbar.empty();
-    for (i = 0; i < carearTopics.length; i++) {
-        let btn = $("<button>");
-        btn.addClass("button");
-        btn.attr("button-click");
-        btn.text(carearTopics[i]);
-        leftbar.append(btn);
-    };
+    SubBtnGenerator(carearTopics);
 };
 
 function displayFitness() {
     leftbar.empty();
-    for (i = 0; i < fitnessTopics.length; i++) {
-        let btn = $("<button>");
-        btn.addClass("button");
-        btn.attr("button-click");
-        btn.text(fitnessTopics[i]);
-        leftbar.append(btn);
-    };
+    SubBtnGenerator(fitnessTopics);
 };
 
 function displayLifestyle() {
     leftbar.empty();
-// Display clickable buttons for Lifestyle subtopics
-    for (i = 0; i < lifestyleTopics.length; i++) {
-        let btn = $("<button>");
-        btn.addClass("button subBtn");
-        btn.attr("button-click");
-        btn.text(lifestyleTopics[i]);
-        leftbar.append(btn);
-    }
+    SubBtnGenerator(lifestyleTopics);
 };
 
 
 // Navbar subtopic button constructor
-
+function SubBtnGenerator(subtopic) {
+    leftbar.empty();
+    for (i = 0; i < subtopic.length; i++) {
+        this.btn = $("<button>");
+        this.btn.addClass("button subBtn");
+        this.btn.attr("button-click");
+        this.btn.text(subtopic[i]);
+        leftbar.append(this.btn);
+    };
+    
+};
 
 
 // Switch statement for leftbar display
 function evaluateBtn() {
     let clickedBtn = $(event.target).attr("name");
+    console.log(clickedBtn);
     
     switch(clickedBtn) {
         case "carear":
@@ -67,10 +59,10 @@ function evaluateBtn() {
     };
 };
 
-// subBtn 
-function subBtn() {
-    console.log("This works");
-};
+// subtopic button generator 
+// function subBtn() {
+//     console.log("This works");
+// };
 
 /* DOM Events */
 
