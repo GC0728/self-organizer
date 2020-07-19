@@ -24,6 +24,7 @@ body {
     grid-template-rows: repeat(2, [row] auto);
     row-gap: 10px;
 }
+
 .grid {
     box-sizing: border-box;
     display: grid;
